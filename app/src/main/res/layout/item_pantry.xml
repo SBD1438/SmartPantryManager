@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="#FFF0F5">
+
+    <!-- Ingredient name -->
+    <TextView
+        android:id="@+id/textIngredientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Milk"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#66334D"/>
+
+    <!-- Ingredient quantity -->
+    <TextView
+        android:id="@+id/textIngredientQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2 litres"
+        android:textSize="14sp"
+        android:textColor="#66334D"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Ingredient expiry date -->
+    <TextView
+        android:id="@+id/textIngredientExpiry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expiry: 25 October 2026"
+        android:textSize="12sp"
+        android:textColor="#80566B"
+        android:layout_marginTop="4dp"/>
+
+</LinearLayout>

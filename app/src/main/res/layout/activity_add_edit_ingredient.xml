@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Screen heading -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Pantry 🌸"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#66334D"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Instructions -->
+        <TextView
+            android:id="@+id/textIngredientFormHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add an ingredient to your pantry"
+            android:textSize="16sp"
+            android:textColor="#80566B"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Ingredient name -->
+        <EditText
+            android:id="@+id/editIngredientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingredient name"
+            android:inputType="textCapWords"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Quantity -->
+        <EditText
+            android:id="@+id/editIngredientQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity"
+            android:inputType="numberDecimal"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Measurement unit -->
+        <EditText
+            android:id="@+id/editIngredientUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Unit (e.g. grams, litres, pieces)"
+            android:inputType="textCapWords"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Optional expiry date -->
+        <EditText
+            android:id="@+id/editIngredientExpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Expiry date (YYYY-MM-DD, optional)"
+            android:inputType="date"
+            android:padding="14dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Save button -->
+        <Button
+            android:id="@+id/buttonSaveIngredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Ingredient"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D88EAF"/>
+
+        <!-- Delete button, hidden when adding a new ingredient -->
+        <Button
+            android:id="@+id/buttonDeleteIngredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Ingredient 🗑️"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#C96C91"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</ScrollView>
+

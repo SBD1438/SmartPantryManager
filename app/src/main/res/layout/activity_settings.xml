@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8FB"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Settings ⚙️"
+            android:textColor="#8E5A80"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personalise your pantry experience! 🌸"
+            android:textColor="#806D7B"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:paddingBottom="28dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expiry Alerts"
+            android:textColor="#A45B8D"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose whether you want expiry alerts enabled for your pantry ingredients."
+            android:textColor="#806D7B"
+            android:textSize="15sp"
+            android:paddingBottom="12dp" />
+
+        <Switch
+            android:id="@+id/switchExpiryAlerts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable expiry alerts"
+            android:textColor="#594650"
+            android:textSize="16sp"
+            android:checked="true"
+            android:padding="8dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EBD5E4"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About Your App 💗"
+            android:textColor="#A45B8D"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smart Pantry Manager helps you organise ingredients, keep track of expiry dates, and discover recipes you can make with the ingredients you have."
+            android:textColor="#806D7B"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp"
+            android:padding="14dp"
+            android:background="#FCEAF4" />
+
+        <Button
+            android:id="@+id/buttonBackToPantryFromSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to My Pantry 🌸"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D99BC2"
+            android:layout_marginTop="28dp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFF8FB">
+
+    <!-- Main heading -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Smart Pantry 🌸"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#66334D"
+        android:layout_marginBottom="6dp"/>
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's make something delicious!"
+        android:textSize="15sp"
+        android:textColor="#80566B"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Cute expiry warning card -->
+    <LinearLayout
+        android:id="@+id/layoutExpiryWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/expiry_warning_background"
+        android:visibility="gone">
+
+        <!-- Warning heading -->
+        <TextView
+            android:id="@+id/textExpiryWarningHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎀 A little expiry reminder!"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#66334D"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Warning description -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let's use these ingredients before they go to waste! 💗"
+            android:textSize="14sp"
+            android:textColor="#80566B"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Ingredients requiring attention -->
+        <TextView
+            android:id="@+id/textExpiryWarningItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#66334D"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Add ingredient button -->
+    <Button
+        android:id="@+id/buttonAddIngredient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+ Add Ingredient"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D88EAF"/>
+
+    <!-- Pantry list heading -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Ingredients 🧺"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#66334D"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Displays saved pantry ingredients -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerPantry"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Suggested recipes button -->
+    <Button
+        android:id="@+id/buttonSuggestedRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🍓 Suggested Recipes"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#C18BCB"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Settings button -->
+    <Button
+        android:id="@+id/buttonSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚙ Settings"
+        android:textColor="#66334D"
+        android:backgroundTint="#F3D9E8"/>
+
+</LinearLayout>

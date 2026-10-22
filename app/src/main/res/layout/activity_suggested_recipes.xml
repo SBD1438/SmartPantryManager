@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8FB"
+    android:padding="20dp">
+
+    <!-- Screen heading -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recipes Just for You 🌸"
+        android:textColor="#8E5A80"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Screen description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delicious ideas using ingredients you already have!"
+        android:textColor="#806D7B"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:paddingBottom="20dp" />
+
+    <!-- Number of recipes available -->
+    <TextView
+        android:id="@+id/textRecipeCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your available recipes"
+        android:textColor="#A45B8D"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <!-- Displays recipes that can be made -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSuggestedRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+
+    <!-- Message displayed when no recipes match -->
+    <TextView
+        android:id="@+id/textNoRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No matching recipes yet. Add more ingredients to your pantry! 🥣"
+        android:textColor="#806D7B"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone" />
+
+    <!-- Back button -->
+    <Button
+        android:id="@+id/buttonBackToPantry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to My Pantry"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#D99BC2"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>
