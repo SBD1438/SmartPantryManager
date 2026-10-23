@@ -81,5 +81,23 @@ public class RecipeMatcherTest {
                 Collections.emptyList(),
                 Collections.emptyList()));
     }
+
+    // Tests whether ingredient names match regardless of capitalisation.
+    @Test
+    public void canMatchIngredientNamesWithDifferentCapitalisation() {
+
+        Recipe recipe = new Recipe(1, "Flour Recipe", 15, "Mix ingredients.");
+
+        List<RecipeIngredient> requiredIngredients = Arrays.asList(
+                new RecipeIngredient(1, 1, "Flour", 500, "g")
+        );
+
+        List<PantryItem> pantryItems = Arrays.asList(
+                new PantryItem(1, "flour", 500, "g", null)
+        );
+
+        assertTrue(RecipeMatcher.canMakeRecipe(
+                recipe, requiredIngredients, pantryItems));
+    }
 }
 
