@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -98,6 +99,52 @@ public class RecipeMatcherTest {
 
         assertTrue(RecipeMatcher.canMakeRecipe(
                 recipe, requiredIngredients, pantryItems));
+    }
+
+    // Tests whether a null recipe is rejected.
+    @Test
+    public void cannotMakeRecipeWhenRecipeIsNull() {
+
+        List<RecipeIngredient> requiredIngredients = Arrays.asList(
+                new RecipeIngredient(1, 1, "Eggs", 2, "pieces")
+        );
+
+        List<PantryItem> pantryItems = Arrays.asList(
+                new PantryItem(1, "Eggs", 3, "pieces", null)
+        );
+
+        assertFalse(RecipeMatcher.canMakeRecipe(
+                null, requiredIngredients, pantryItems));
+    }
+
+    // Tests whether only recipes with available ingredients are returned.
+    @Test
+    public void returnsOnlyRecipesThatCanBeMade() {
+
+        Recipe eggsRecipe = new Recipe(
+                1, "Scrambled Eggs", 10, "Mix and cook.");
+
+        Recipe flourRecipe = new Recipe(
+                2, "Flour Recipe", 15, "Mix ingredients.");
+
+        List<Recipe> recipes = Arrays.asList(
+                eggsRecipe, flourRecipe
+        );
+
+        List<PantryItem> pantryItems = Arrays.asList(
+                new PantryItem(1, "Eggs", 3, "pieces", null)
+        );
+
+        List<RecipeIngredient> allRecipeIngredients = Arrays.asList(
+                new RecipeIngredient(1, 1, "Eggs", 2, "pieces"),
+                new RecipeIngredient(2, 2, "Flour", 500, "g")
+        );
+
+        List<Recipe> matchingRecipes = RecipeMatcher.getMatchingRecipes(
+                recipes, pantryItems, allRecipeIngredients);
+
+        assertEquals(1, matchingRecipes.size());
+        assertEquals("Scrambled Eggs", matchingRecipes.get(0).getName());
     }
 }
 
