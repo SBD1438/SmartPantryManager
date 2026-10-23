@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout layoutExpiryWarning;
     private TextView textExpiryWarningItems;
+    private TextView textEmptyPantry;
 
     private ArrayList<PantryItem> pantryItems;
 
@@ -44,12 +45,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerPantry = findViewById(R.id.recyclerPantry);
         layoutExpiryWarning = findViewById(R.id.layoutExpiryWarning);
         textExpiryWarningItems = findViewById(R.id.textExpiryWarningItems);
+        textEmptyPantry = findViewById(R.id.textEmptyPantry);
 
         recyclerPantry.setLayoutManager(new LinearLayoutManager(this));
 
         pantryItems = databaseHelper.getAllPantryItems();
         pantryAdapter = new PantryAdapter(pantryItems);
         recyclerPantry.setAdapter(pantryAdapter);
+
+        updateEmptyPantryMessage(pantryItems);
 
         Button buttonAddIngredient =
                 findViewById(R.id.buttonAddIngredient);
@@ -94,7 +98,21 @@ public class MainActivity extends AppCompatActivity {
                     databaseHelper.getAllPantryItems();
 
             pantryAdapter.updateData(updatedItems);
+
+            updateEmptyPantryMessage(updatedItems);
             updateExpiryWarning(updatedItems);
+        }
+    }
+
+    // Show a helpful message when the pantry contains no ingredients.
+    private void updateEmptyPantryMessage(ArrayList<PantryItem> items) {
+
+        if (items == null || items.isEmpty()) {
+            textEmptyPantry.setVisibility(View.VISIBLE);
+            recyclerPantry.setVisibility(View.GONE);
+        } else {
+            textEmptyPantry.setVisibility(View.GONE);
+            recyclerPantry.setVisibility(View.VISIBLE);
         }
     }
 
